@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<!-- #region EKTH_WorkType_Deconstructing -->
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="VME_DeconstructJunk"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_Deconstructing</workType>
+		</value>
+	</Operation>
+
+	<!-- #endregion -->
+
+</Patch>

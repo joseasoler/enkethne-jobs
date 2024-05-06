@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>Enkethne - Jobs</name>
+	<author>José Ángel Soler Ortiz</author>
+	<supportedVersions>
+		<li>1.5</li>
+	</supportedVersions>
+	<url>https://gitlab.com/joseasoler/enkethne-jobs</url>
+	<packageId>joseasoler.enkethne.jobs</packageId>
+	<description>See README.md</description>
+	<loadAfter>
+		<li>Ludeon.RimWorld</li>
+		<li>Ludeon.RimWorld.Royalty</li>
+		<li>Ludeon.RimWorld.Ideology</li>
+		<li>Ludeon.RimWorld.Biotech</li>
+		<li>Ludeon.RimWorld.Anomaly</li>
+	</loadAfter>
+</ModMetaData>

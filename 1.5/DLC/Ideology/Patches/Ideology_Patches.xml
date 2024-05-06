@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<!-- #region EKTH_WorkType_PriorityHauling -->
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="HaulToBiosculpterPod"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_PriorityHauling</workType>
+		</value>
+	</Operation>
+
+	<!-- #endregion -->
+
+	<!-- #region EKTH_WorkType_Converting -->
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="ConvertPrisoner"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_Converting</workType>
+		</value>
+	</Operation>
+
+	<!-- #endregion -->
+
+	<!-- #region EKTH_WorkType_Undertaking -->
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="ExtractSkull"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_Undertaking</workType>
+		</value>
+	</Operation>
+
+	<!-- #endregion -->
+
+	<!-- #region EKTH_WorkType_Pruning -->
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="PruneGauranlenTree"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_Pruning</workType>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="ChangeTreeMode"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_Pruning</workType>
+		</value>
+	</Operation>
+
+	<!-- #endregion -->
+
+</Patch>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<loadFolders>
+	<v1.5>
+		<li>1.5/Core</li>
+		<li IfModActive="Ludeon.RimWorld.Biotech">1.5/DLC/Biotech</li>
+		<li IfModActive="Ludeon.RimWorld.Ideology">1.5/DLC/Ideology</li>
+		<li IfModActive="biomesteam.biomescaverns">1.5/Mods/BiomesCaverns</li>
+		<li IfModActive="danielwedemeyer.generipper">1.5/Mods/GeneRipper</li>
+		<li IfModActive="oskarpotocki.vanillafactionsexpanded.core">1.5/Mods/VanillaExpandedFramework</li>
+		<li IfModActive="redmattis.geneextractor">1.5/Mods/GeneExtractor</li>
+		<li IfModActive="sarg.alphabiomes">1.5/Mods/AlphaBiomes</li>
+		<li IfModActive="sarg.alphagenes">1.5/Mods/AlphaGenes</li>
+		<li IfModActive="smashphil.vehicleframework">1.5/Mods/VehicleFramework</li>
+		<li IfModActive="vanillaexpanded.vbrewe">1.5/Mods/VanillaBrewingExpanded</li>
+		<li IfModActive="vanillaexpanded.vbrewecandt">1.5/Mods/VanillaBrewingExpandedCoffeesAndTeas</li>
+		<li IfModActive="vanillaexpanded.vmemese">1.5/Mods/VanillaIdeologyExpandedMemesAndStructures</li>
+	</v1.5>
+</loadFolders>

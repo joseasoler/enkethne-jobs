@@ -1,0 +1,605 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+	<!-- #region lifeStageWorkSettings -->
+
+	<!-- Commented out lines come from Core/Defs/ThingDefs_Races/Races_Humanlike.xml
+	and are here for reference. As much as possible, Many Jobs worktypes follow the
+	game's built-in life stage work settings. -->
+
+	<Operation Class="PatchOperationInsert">
+		<xpath>Defs/ThingDef[defName="Human"]/race/lifeStageWorkSettings/*[last()]</xpath>
+		<order>Append</order>
+		<value>
+			<EKTH_WorkType_Rescuing>7</EKTH_WorkType_Rescuing>
+			<!-- <Firefighter>7</Firefighter> -->
+			<!-- <Patient>0</Patient> -->
+			<!-- <Doctor>10</Doctor> -->
+			<EKTH_WorkType_Operating>10</EKTH_WorkType_Operating>
+			<!-- <PatientBedRest>0</PatientBedRest> -->
+			<EKTH_WorkType_Caring>7</EKTH_WorkType_Caring>
+			<EKTH_WorkType_PriorityHauling>3</EKTH_WorkType_PriorityHauling>
+			<EKTH_WorkType_PriorityCleaning>3</EKTH_WorkType_PriorityCleaning>
+			<EKTH_WorkType_CleaningPollution>3</EKTH_WorkType_CleaningPollution>
+			<!-- <BasicWorker>3</BasicWorker> -->
+			<EKTH_WorkType_Undertaking>13</EKTH_WorkType_Undertaking>
+			<EKTH_WorkType_Recruiting>13</EKTH_WorkType_Recruiting>
+			<!-- <Warden>10</Warden> -->
+			<EKTH_WorkType_AnimalTraining>7</EKTH_WorkType_AnimalTraining>
+			<!-- <Handling>7</Handling> -->
+			<EKTH_WorkType_AnimalTaming>7</EKTH_WorkType_AnimalTaming>
+			<EKTH_WorkType_Butchering>7</EKTH_WorkType_Butchering>
+			<!-- <Cooking>7</Cooking> -->
+			<EKTH_WorkType_Brewing>7</EKTH_WorkType_Brewing>
+			<!-- <Hunting>7</Hunting> -->
+			<EKTH_WorkType_Maintaining>10</EKTH_WorkType_Maintaining>
+			<EKTH_WorkType_Deconstructing>10</EKTH_WorkType_Deconstructing>
+			<!-- <Construction>10</Construction> -->
+			<EKTH_WorkType_Smoothing>10</EKTH_WorkType_Smoothing>
+			<EKTH_WorkType_Painting>10</EKTH_WorkType_Painting>
+			<EKTH_WorkType_Harvesting>7</EKTH_WorkType_Harvesting>
+			<!-- <Growing>7</Growing> -->
+			<!-- <Mining>7</Mining> -->
+			<EKTH_WorkType_Drilling>7</EKTH_WorkType_Drilling>
+			<EKTH_WorkType_Pruning>7</EKTH_WorkType_Pruning>
+			<!-- <PlantCutting>7</PlantCutting> -->
+			<EKTH_WorkType_Fabricating>13</EKTH_WorkType_Fabricating>
+			<!-- <Smithing>13</Smithing> -->
+			<!-- <Tailoring>7</Tailoring> -->
+			<!-- <Art>10</Art> -->
+			<EKTH_WorkType_Synthesizing>13</EKTH_WorkType_Synthesizing>
+			<EKTH_WorkType_Refining>7</EKTH_WorkType_Refining>
+			<EKTH_WorkType_Smelting>13</EKTH_WorkType_Smelting>
+			<EKTH_WorkType_Stonecutting>7</EKTH_WorkType_Stonecutting>
+			<!-- <Crafting>7</Crafting> -->
+			<EKTH_WorkType_Delivering>3</EKTH_WorkType_Delivering>
+			<EKTH_WorkType_Loading>3</EKTH_WorkType_Loading>
+			<EKTH_WorkType_Merging>3</EKTH_WorkType_Merging>
+			<!-- <Hauling>3</Hauling> -->
+			<!-- <Cleaning>3</Cleaning> -->
+			<!-- <Research>13</Research> -->
+			<EKTH_WorkType_Scanning>13</EKTH_WorkType_Scanning>
+		</value>
+	</Operation>
+
+	<!-- #endregion -->
+
+	<!-- #region EKTH_WorkType_Rescuing -->
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="DoctorRescue"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_Rescuing</workType>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/WorkGiverDef[defName="DoctorRescue"]/emergency</xpath>
+		<match Class="PatchOperationReplace">
+			<xpath>Defs/WorkGiverDef[defName="DoctorRescue"]/emergency</xpath>
+			<value>
+				<emergency>true</emergency>
+			</value>
+		</match>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/WorkGiverDef[defName="DoctorRescue"]</xpath>
+			<value>
+				<emergency>true</emergency>
+			</value>
+		</nomatch>
+	</Operation>
+
+	<!-- #endregion -->
+
+	<!-- #region EKTH_WorkType_Operating -->
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="DoBillsMedicalHumanOperation"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_Operating</workType>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="DoBillsMedicalAnimalOperation"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_Operating</workType>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="TakeToBedToOperate"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_Operating</workType>
+		</value>
+	</Operation>
+
+	<!-- #endregion -->
+
+	<!-- #region EKTH_WorkType_Caring -->
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="DoctorFeedHumanlikes"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_Caring</workType>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="DoctorFeedAnimals"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_Caring</workType>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="VisitSickPawn"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_Caring</workType>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="FeedPrisoner"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_Caring</workType>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="DeliverFoodToPrisoner"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_Caring</workType>
+		</value>
+	</Operation>
+
+	<!-- #endregion -->
+
+	<!-- #region EKTH_WorkType_PriorityHauling -->
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="Refuel"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_PriorityHauling</workType>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="RearmTurrets"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_PriorityHauling</workType>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="TakeBeerOutOfFermentingBarrel"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_PriorityHauling</workType>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="FillFermentingBarrel"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_PriorityHauling</workType>
+		</value>
+	</Operation>
+
+	<!-- #endregion -->
+
+	<!-- #region EKTH_WorkType_PriorityCleaning -->
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="CleanClearSnow"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_PriorityCleaning</workType>
+		</value>
+	</Operation>
+
+	<!-- #endregion -->
+
+	<!-- #region EKTH_WorkType_Undertaking -->
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="Strip"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_Undertaking</workType>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="HaulCorpses"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_Undertaking</workType>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="DoBillsCremate"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_Undertaking</workType>
+		</value>
+	</Operation>
+
+	<!-- #endregion -->
+
+	<!-- #region EKTH_WorkType_Recruiting -->
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="ChatWithPrisoner"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_Recruiting</workType>
+		</value>
+	</Operation>
+
+	<!-- #endregion -->
+
+	<!-- #region EKTH_WorkType_AnimalTraining -->
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="Train"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_AnimalTraining</workType>
+		</value>
+	</Operation>
+
+	<!-- #endregion -->
+
+	<!-- Handling -->
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="EmptyEggBox"]/workType</xpath>
+		<value>
+			<workType>Handling</workType>
+		</value>
+	</Operation>
+
+	<!-- #region EKTH_WorkType_AnimalTaming -->
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="Tame"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_AnimalTaming</workType>
+		</value>
+	</Operation>
+
+	<!-- #endregion -->
+
+	<!-- #region EKTH_WorkType_Butchering -->
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="DoBillsButcherFlesh"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_Butchering</workType>
+		</value>
+	</Operation>
+
+	<!-- #endregion -->
+
+	<!-- #region EKTH_WorkType_Brewing -->
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="DoBillsBrew"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_Brewing</workType>
+		</value>
+	</Operation>
+
+	<!-- #endregion -->
+
+	<!-- #region EKTH_WorkType_Maintaining -->
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="FixBrokenDownBuilding"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_Maintaining</workType>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="Repair"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_Maintaining</workType>
+		</value>
+	</Operation>
+
+	<!-- #endregion -->
+
+	<!-- #region EKTH_WorkType_Deconstructing -->
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="Uninstall"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_Deconstructing</workType>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="Deconstruct"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_Deconstructing</workType>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="ConstructRemoveFloors"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_Deconstructing</workType>
+		</value>
+	</Operation>
+
+	<!-- #endregion -->
+
+	<!-- #region EKTH_WorkType_Smoothing -->
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="ConstructSmoothFloors"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_Smoothing</workType>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="ConstructSmoothWalls"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_Smoothing</workType>
+		</value>
+	</Operation>
+
+	<!-- #endregion -->
+
+	<!-- #region EKTH_WorkType_Painting -->
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="PaintBuilding"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_Painting</workType>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="PaintFloor"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_Painting</workType>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="RemovePaintBuilding"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_Painting</workType>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="RemovePaintFloor"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_Painting</workType>
+		</value>
+	</Operation>
+
+	<!-- #endregion -->
+
+	<!-- #region EKTH_WorkType_Harvesting -->
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="GrowerHarvest"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_Harvesting</workType>
+		</value>
+	</Operation>
+
+	<!-- #endregion -->
+
+	<!-- #region EKTH_WorkType_Drilling -->
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="Drill"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_Drilling</workType>
+		</value>
+	</Operation>
+
+	<!-- #endregion -->
+
+	<!-- #region EKTH_WorkType_Fabricating -->
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="DoBillsFabricationBench"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_Fabricating</workType>
+		</value>
+	</Operation>
+
+	<!-- #endregion -->
+
+	<!-- #region EKTH_WorkType_Synthesizing -->
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="DoBillsProduceDrugs"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_Synthesizing</workType>
+		</value>
+	</Operation>
+
+	<!-- #endregion -->
+
+	<!-- #region EKTH_WorkType_Refining -->
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="DoBillsRefinery"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_Refining</workType>
+		</value>
+	</Operation>
+
+	<!-- #endregion -->
+
+	<!-- #region EKTH_WorkType_Smelting -->
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="DoBillsSmelter"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_Smelting</workType>
+		</value>
+	</Operation>
+
+	<!-- #endregion -->
+
+	<!-- #region EKTH_WorkType_Stonecutting -->
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="DoBillsStonecut"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_Stonecutting</workType>
+		</value>
+	</Operation>
+
+	<!-- #endregion -->
+
+	<!-- #region EKTH_WorkType_Delivering -->
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="DeliverResourcesToFrames"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_Delivering</workType>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="DeliverResourcesToBlueprints"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_Delivering</workType>
+		</value>
+	</Operation>
+
+	<!-- #endregion -->
+
+	<!-- #region EKTH_WorkType_Loading -->
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="UnloadCarriers"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_Loading</workType>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="HelpGatheringItemsForCaravan"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_Loading</workType>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="LoadTransporters"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_Loading</workType>
+		</value>
+	</Operation>
+
+	<!-- #endregion -->
+
+	<!-- #region EKTH_WorkType_Loading -->
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="HaulMerge"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_Merging</workType>
+		</value>
+	</Operation>
+
+	<!-- #endregion -->
+
+	<!-- #region EKTH_WorkType_Scanning -->
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="LongRangeScan"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_Scanning</workType>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="GroundPenetratingScan"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_Scanning</workType>
+		</value>
+	</Operation>
+
+	<!-- #endregion -->
+
+	<!-- Core WorkTypeDef descriptions -->
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkTypeDef[defName="Doctor"]/description</xpath>
+		<value>
+			<description>Treat the sick. Doctors will care for colonists, prisoners and animals.</description>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkTypeDef[defName="Warden"]/description</xpath>
+		<value>
+			<description>Manage prisoners.</description>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkTypeDef[defName="Handling"]/description</xpath>
+		<value>
+			<description>Feed, harvest resources from and slaughter animals.</description>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkTypeDef[defName="Cooking"]/description</xpath>
+		<value>
+			<description>Prepare meals.</description>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkTypeDef[defName="Construction"]/description</xpath>
+		<value>
+			<description>Build things that you've designated.</description>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkTypeDef[defName="Growing"]/description</xpath>
+		<value>
+			<description>Plant seeds, replant trees and sow crops.</description>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkTypeDef[defName="Mining"]/description</xpath>
+		<value>
+			<description>Digging.</description>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkTypeDef[defName="PlantCutting"]/description</xpath>
+		<value>
+			<description>Cut plants as designated.</description>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkTypeDef[defName="Crafting"]/description</xpath>
+		<value>
+			<description>Do general low-skilled labor at work stations.</description>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkTypeDef[defName="Cleaning"]/description</xpath>
+		<value>
+			<description>Clean the floor in the home area.</description>
+		</value>
+	</Operation>
+
+</Patch>
