@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<!-- Note that there are also patches to change ActivitySuppressionRate to rely on Intellectual only. -->
+	<WorkTypeDef>
+		<defName>EKTH_WorkType_Suppressing</defName>
+		<labelShort>suppression</labelShort>
+		<pawnLabel>Suppressor</pawnLabel>
+		<gerundLabel>suppressing</gerundLabel>
+		<description>Suppressing entities.</description>
+		<verb>Suppress</verb>
+		<naturalPriority>1109</naturalPriority>
+		<requireCapableColonist>true</requireCapableColonist>
+		<disabledForSlaves>true</disabledForSlaves>
+		<relevantSkills>
+			<li>Intellectual</li>
+		</relevantSkills>
+		<workTags>
+			<li>Intellectual</li>
+			<li>AllWork</li>
+		</workTags>
+	</WorkTypeDef>
+
+</Defs>

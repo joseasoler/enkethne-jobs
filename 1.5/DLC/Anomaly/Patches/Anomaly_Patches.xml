@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<!-- #region EKTH_WorkType_PriorityHauling -->
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="TakeEntityToHoldingPlatform"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_PriorityHauling</workType>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="TransferEntity"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_PriorityHauling</workType>
+		</value>
+	</Operation>
+
+	<!-- #endregion -->
+
+	<!-- #region EKTH_WorkType_Suppressing -->
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="ActivitySuppression"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_Suppressing</workType>
+		</value>
+	</Operation>
+
+	<!-- #endregion -->
+
+	<!-- #region ActivitySuppressionRate -->
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/StatDef[defName="ActivitySuppressionRate"]/skillNeedOffsets</xpath>
+		<value>
+			<skillNeedOffsets>
+				<li Class="SkillNeed_BaseBonus">
+					<skill>Intellectual</skill>
+					<baseValue>-0.015</baseValue>
+					<bonusPerLevel>0.0075</bonusPerLevel>
+					<required>false</required>
+				</li>
+			</skillNeedOffsets>
+		</value>
+	</Operation>
+
+	<!-- #endregion -->
+</Patch>

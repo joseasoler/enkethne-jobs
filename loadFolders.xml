@@ -2,8 +2,9 @@
 <loadFolders>
 	<v1.5>
 		<li>1.5/Core</li>
-		<li IfModActive="Ludeon.RimWorld.Biotech">1.5/DLC/Biotech</li>
 		<li IfModActive="Ludeon.RimWorld.Ideology">1.5/DLC/Ideology</li>
+		<li IfModActive="Ludeon.RimWorld.Biotech">1.5/DLC/Biotech</li>
+		<li IfModActive="Ludeon.RimWorld.Anomaly">1.5/DLC/Anomaly</li>
 		<li IfModActive="biomesteam.biomescaverns">1.5/Mods/BiomesCaverns</li>
 		<li IfModActive="danielwedemeyer.generipper">1.5/Mods/GeneRipper</li>
 		<li IfModActive="oskarpotocki.vanillafactionsexpanded.core">1.5/Mods/VanillaExpandedFramework</li>
