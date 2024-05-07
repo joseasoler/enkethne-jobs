@@ -11,6 +11,7 @@
 		<li IfModActive="redmattis.geneextractor">1.5/Mods/GeneExtractor</li>
 		<li IfModActive="sarg.alphabiomes">1.5/Mods/AlphaBiomes</li>
 		<li IfModActive="sarg.alphagenes">1.5/Mods/AlphaGenes</li>
+		<li IfModActive="sarg.alphamechs">1.5/Mods/AlphaMechs</li>
 		<li IfModActive="smashphil.vehicleframework">1.5/Mods/VehicleFramework</li>
 		<li IfModActive="vanillaexpanded.vbrewe">1.5/Mods/VanillaBrewingExpanded</li>
 		<li IfModActive="vanillaexpanded.vbrewecandt">1.5/Mods/VanillaBrewingExpandedCoffeesAndTeas</li>

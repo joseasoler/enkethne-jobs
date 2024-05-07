@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<!-- #region EKTH_WorkType_Caring -->
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="DeliverHemogenToPrisoner"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_Caring</workType>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="FeedHemogen"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_Caring</workType>
+		</value>
+	</Operation>
+
+	<!-- #endregion -->
+
+	<!-- #region EKTH_WorkType_Teaching -->
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="ChildcarerTeach"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_Teaching</workType>
+		</value>
+	</Operation>
+
+	<!-- #endregion -->
+
+	<!-- #region EKTH_WorkType_PriorityHauling -->
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="CarryToGeneExtractor"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_PriorityHauling</workType>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="CarryToGrowthVat"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_PriorityHauling</workType>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="CarryToSubcoreScanner"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_PriorityHauling</workType>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/WorkGiverDef[defName="HaulToCarrier"]</xpath>
+		<value>
+			<workType>EKTH_WorkType_PriorityHauling</workType>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="HaulToGrowthVat"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_PriorityHauling</workType>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/WorkGiverDef[defName="HaulToSubcoreScanner"]</xpath>
+		<value>
+			<workType>EKTH_WorkType_PriorityHauling</workType>
+		</value>
+	</Operation>
+
+	<!-- #endregion -->
+
+	<!-- #region EKTH_WorkType_CleaningPollution -->
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="CleanClearPollution"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_CleaningPollution</workType>
+		</value>
+	</Operation>
+
+	<!-- #endregion -->
+
+	<!-- #region EKTH_WorkType_Mechanitor -->
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="RepairMech"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_Mechanitor</workType>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="DoBillsMechGestator"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_Mechanitor</workType>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="DoBillsSubcoreEncoder"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_Mechanitor</workType>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="EmptyWasteContainer"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_Mechanitor</workType>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="HaulMechsToCharger"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_Mechanitor</workType>
+		</value>
+	</Operation>
+
+	<!-- #endregion -->
+
+
+</Patch>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="Mech_Agrihand"]/race/mechEnabledWorkTypes</xpath>
+		<value>
+			<li>EKTH_WorkType_Harvesting</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="Mech_Cleansweeper"]/race/mechEnabledWorkTypes</xpath>
+		<value>
+			<li>EKTH_WorkType_PriorityCleaning</li>
+			<li>EKTH_WorkType_CleaningPollution</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="Mech_Constructoid"]/race/mechEnabledWorkTypes</xpath>
+		<value>
+			<li>EKTH_WorkType_Maintaining</li>
+			<li>EKTH_WorkType_Deconstructing</li>
+			<li>EKTH_WorkType_Smoothing</li>
+			<li>EKTH_WorkType_Painting</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="Mech_Fabricor"]/race/mechEnabledWorkTypes</xpath>
+		<value>
+			<li>EKTH_WorkType_Butchering</li>
+			<li>EKTH_WorkType_Brewing</li>
+			<li>EKTH_WorkType_Fabricating</li>
+			<li>EKTH_WorkType_Synthesizing</li>
+			<li>EKTH_WorkType_Refining</li>
+			<li>EKTH_WorkType_Smelting</li>
+			<li>EKTH_WorkType_Stonecutting</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="Mech_Lifter"]/race/mechEnabledWorkTypes</xpath>
+		<value>
+			<li>EKTH_WorkType_PriorityHauling</li>
+			<li>EKTH_WorkType_Undertaking</li>
+			<li>EKTH_WorkType_Delivering</li>
+			<li>EKTH_WorkType_Loading</li>
+			<li>EKTH_WorkType_Merging</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="Mech_Paramedic"]/race/mechEnabledWorkTypes</xpath>
+		<value>
+			<li>EKTH_WorkType_Rescuing</li>
+			<li>EKTH_WorkType_Operating</li>
+			<li>EKTH_WorkType_Caring</li>
+		</value>
+	</Operation>
+
+</Patch>

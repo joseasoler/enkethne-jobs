@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="AM_Mech_MasterChef"]/race/mechEnabledWorkTypes</xpath>
+		<value>
+			<li>EKTH_WorkType_Butchering</li>
+			<li>EKTH_WorkType_Brewing</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="AM_PristineStrider"]/race/mechEnabledWorkTypes</xpath>
+		<value>
+			<li>EKTH_WorkType_PriorityHauling</li>
+			<li>EKTH_WorkType_Undertaking</li>
+			<li>EKTH_WorkType_Delivering</li>
+			<li>EKTH_WorkType_Loading</li>
+			<li>EKTH_WorkType_Merging</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="AM_Mech_TurboCleaner"]/race/mechEnabledWorkTypes</xpath>
+		<value>
+			<li>EKTH_WorkType_PriorityCleaning</li>
+			<li>EKTH_WorkType_CleaningPollution</li>
+		</value>
+	</Operation>
+
+</Patch>
