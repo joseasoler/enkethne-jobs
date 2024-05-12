@@ -323,6 +323,13 @@
 	</Operation>
 
 	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorkGiverDef[defName="RemoveRoofs"]/workType</xpath>
+		<value>
+			<workType>EKTH_WorkType_Deconstructing</workType>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/WorkGiverDef[defName="ConstructRemoveFloors"]/workType</xpath>
 		<value>
 			<workType>EKTH_WorkType_Deconstructing</workType>
